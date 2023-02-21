@@ -11,6 +11,13 @@ public class Product {
         this.price = price;
         this.quantity = quantity;
     }
+
+    public Product(String name, double price) { // aqui é um outro construtor que nao recebe a quantidade em estoque pois o mesmo será inicializado com 0
+        this.name = name;
+        this.price = price;
+//        this.quantity = quantity; nao se faz necessario coloocar o this aqui nesse construtor, ja que nao há ambiguidade da palavra quantity. Portanto tod.o o quantity citado aqui será o quantity da classe.
+//        nao preciso dizer pq ela é inicializada com zero.
+    }
     public double totalValueInStock() {
         return price * quantity;
     }

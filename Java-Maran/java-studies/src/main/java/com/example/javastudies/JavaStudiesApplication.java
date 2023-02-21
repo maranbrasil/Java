@@ -16,15 +16,8 @@ public class JavaStudiesApplication {
        Locale.setDefault(Locale.US);
        Scanner sc = new Scanner(System.in);
 
-       // Product product = new Product(); essa instanciaçao terá erro, ja que o construtor existente na classe demanda argumentos.
-
-//       System.out.println(product.name);
-//       System.out.println(product.price);
-//       System.out.println(product.quantity);
-         // ao printar esses caras acima após um objeto ser instanciado, o objeto retorna os valres padrao.
-         // ou seja: para string retorna null e para double/int retorna 0
-
-         // ja que nao faz sentido haver um produto sem nome e sem preço, podemos fazer com que o constutor exija tais valores para se instanciado
+       // a palavra this serve para diferenciar atributos de variaveis locais, ja que elas podem tem o mesmo nome.
+       // e tbm para passar o prórpio objeto como argumento na chamada de um metodo ou contrutor
 
        System.out.println("Enter product data: ");
        System.out.print("Name: ");
@@ -33,17 +26,21 @@ public class JavaStudiesApplication {
        System.out.print("Price: ");
 
        double price = sc.nextDouble();
-       System.out.print("Quantity in stock: ");
-       int quantity = sc.nextInt();
+//       System.out.print("Quantity in stock: "); apago essa parte
+//       int quantity = sc.nextInt();
 
-       Product product = new Product(name, price, quantity); // agora posso instanciar o pbjeto, pois o mesmo tem os argumentos que foram descritos no construtor da classe product
+
+//     sobrecarga é vc disponibilizar mais de uma versao para a mesma operacao, sendo a diferenca a quantidade de parametros
+
+
+       Product product = new Product(name, price); // agora o construtor nao leva em consideracao a quantidade em estoque
        System.out.println();
 
        System.out.println("Product data: " + product);
        System.out.println();
 
        System.out.print("Enter the number of products to be added in stock: ");
-       quantity = sc.nextInt();
+       int quantity = sc.nextInt();
        product.addProducts(quantity);
        System.out.println();
 
